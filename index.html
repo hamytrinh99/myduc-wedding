@@ -5,114 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiệp Mời Cưới - Hà My & Trung Đức</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/wedding-rings.png">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
 </head>
 <body>
-    <!-- Background Animation -->
-    <div class="ghibli-background">
-        <div class="floating-heart"><i class="fas fa-heart"></i></div>
-        <div class="floating-heart"><i class="fas fa-heart"></i></div>
-        <div class="floating-heart"><i class="fas fa-heart"></i></div>
-        <div class="floating-flower">🌸</div>
-        <div class="floating-flower">🌸</div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
-        <div class="sparkle"></div>
+    <!-- Background with subtle animation -->
+    <div class="background-animation">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
 
-    <!-- Main Invitation Container -->
-    <div class="container">
-        <!-- Invitation Card (Closed View) -->
-        <div class="invitation-closed" id="closedCard">
-            <div class="ribbon-tim">RIBBON TIM</div>
-            
-            <div class="invitation-front">
-                <div class="wedding-couple">
-                    <div class="bride">HÀ MY</div>
-                    <div class="heart-connector">
-                        <i class="fas fa-heart"></i>
-                        <i class="fas fa-heart"></i>
-                        <i class="fas fa-heart"></i>
+    <!-- Closed Card View -->
+    <div class="card-wrapper">
+        <div class="invitation-card closed-card" id="closedCard">
+            <div class="card-inner">
+                <!-- Card Front (Mặt trước thiệp) -->
+                <div class="card-front">
+                    <!-- Decorative border corners -->
+                    <div class="decor-corner tl">
+                        <div class="decor-line"></div>
+                        <div class="decor-dot"></div>
                     </div>
-                    <div class="groom">TRUNG ĐỨC</div>
-                </div>
-                
-                <h1 class="heading">Wedding Invitation</h1>
-                
-                <div class="quote">
-                    <i class="fas fa-quote-left"></i>
-                    <span class="code-quote">cout << "nothing to fear, love is here, together we cheer";</span>
-                    <i class="fas fa-quote-right"></i>
-                </div>
-                
-                <div class="flower-decoration">
-                    <i class="fas fa-leaf"></i>
-                    <i class="fas fa-leaf"></i>
-                    <i class="fas fa-leaf"></i>
-                </div>
-                
-                <p class="instruction">Ấn vào thiệp để mở</p>
-                <div class="open-icon">
-                    <i class="fas fa-chevron-down"></i>
+                    <div class="decor-corner tr">
+                        <div class="decor-line"></div>
+                        <div class="decor-dot"></div>
+                    </div>
+                    <div class="decor-corner bl">
+                        <div class="decor-line"></div>
+                        <div class="decor-dot"></div>
+                    </div>
+                    <div class="decor-corner br">
+                        <div class="decor-line"></div>
+                        <div class="decor-dot"></div>
+                    </div>
+
+                    <!-- Main content -->
+                    <div class="card-content">
+                        <!-- RIBBON TIM header -->
+                        <div class="ribbon-header">
+                            <div class="ribbon-text">
+                                <span class="ribbon-char">R</span>
+                                <span class="ribbon-char">I</span>
+                                <span class="ribbon-char">B</span>
+                                <span class="ribbon-char">B</span>
+                                <span class="ribbon-char">O</span>
+                                <span class="ribbon-char">N</span>
+                                <span class="ribbon-space">&nbsp;</span>
+                                <span class="ribbon-char">T</span>
+                                <span class="ribbon-char">I</span>
+                                <span class="ribbon-char">M</span>
+                            </div>
+                            <div class="ribbon-line"></div>
+                        </div>
+
+                        <!-- Wedding invitation heading -->
+                        <div class="wedding-heading">
+                            <h1 class="heading-main">Wedding<br>invitation</h1>
+                            <div class="heading-underline"></div>
+                        </div>
+
+                        <!-- Center quote with code style -->
+                        <div class="center-quote">
+                            <div class="code-container">
+                                <span class="code-keyword">cout</span>
+                                <span class="code-operator">&lt;&lt;</span>
+                                <span class="code-string">"nothing to fear, love is here, together we cheer"</span>
+                                <span class="code-semicolon">;</span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom decoration -->
+                        <div class="bottom-decoration">
+                            <div class="flower-icon">❀</div>
+                            <div class="flower-icon">❀</div>
+                            <div class="flower-icon">❀</div>
+                        </div>
+
+                        <!-- Open instruction -->
+                        <div class="open-hint">
+                            <p>Nhấn để mở thiệp</p>
+                            <div class="arrow-down">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Invitation Card (Opened View) -->
-        <div class="invitation-opened" id="openedCard">
-            <div class="invitation-content">
-                <!-- Left Page -->
-                <div class="page left-page">
+        <!-- Opened Card View -->
+        <div class="invitation-card opened-card" id="openedCard">
+            <div class="card-inner opened">
+                <!-- Left Page (Inside left) -->
+                <div class="card-page left-page">
                     <div class="page-content">
-                        <div class="ribbon-tim">RIBBON TIM</div>
-                        
-                        <div class="invitation-header">
-                            <h2 class="invitation-title">TRÂN TRỌNG KÍNH MỜI</h2>
-                            <div class="guest-name-container">
-                                <p class="kính-mời">Kính mời:</p>
+                        <!-- RIBBON TIM header -->
+                        <div class="ribbon-header inside">
+                            <div class="ribbon-text">
+                                <span class="ribbon-char">R</span>
+                                <span class="ribbon-char">I</span>
+                                <span class="ribbon-char">B</span>
+                                <span class="ribbon-char">B</span>
+                                <span class="ribbon-char">O</span>
+                                <span class="ribbon-char">N</span>
+                                <span class="ribbon-space">&nbsp;</span>
+                                <span class="ribbon-char">T</span>
+                                <span class="ribbon-char">I</span>
+                                <span class="ribbon-char">M</span>
+                            </div>
+                            <div class="ribbon-line"></div>
+                        </div>
+
+                        <!-- Formal invitation text -->
+                        <div class="formal-invitation">
+                            <h2 class="invite-title">TRÂN TRỌNG KÍNH MỜI</h2>
+                            
+                            <!-- Personalized guest name -->
+                            <div class="guest-section">
+                                <p class="guest-label">Kính mời:</p>
                                 <h3 class="guest-name" id="displayGuestName">Quý khách</h3>
                             </div>
-                        </div>
-                        
-                        <div class="couple-info">
-                            <div class="bride-info">
-                                <div class="name-label">CÔ DÂU</div>
-                                <h3 class="name">HÀ MY</h3>
-                                <p class="subtitle">Con gái ông bà <br>Nguyễn Văn A & Trần Thị B</p>
+
+                            <!-- Couple information -->
+                            <div class="couple-section">
+                                <div class="bride-side">
+                                    <div class="role-label">CÔ DÂU</div>
+                                    <h4 class="name-large">HÀ MY</h4>
+                                    <p class="parents">Con gái ông bà<br>Nguyễn Văn A & Trần Thị B</p>
+                                </div>
+                                
+                                <div class="heart-connection">
+                                    <div class="heart-icon">♥</div>
+                                    <div class="and-text">&</div>
+                                    <div class="heart-icon">♥</div>
+                                </div>
+                                
+                                <div class="groom-side">
+                                    <div class="role-label">CHÚ RỂ</div>
+                                    <h4 class="name-large">TRUNG ĐỨC</h4>
+                                    <p class="parents">Con trai ông bà<br>Lê Văn C & Phạm Thị D</p>
+                                </div>
                             </div>
-                            
-                            <div class="heart-connector-large">
-                                <i class="fas fa-heart"></i>
-                                <div class="and">&</div>
-                                <i class="fas fa-heart"></i>
+
+                            <!-- Code snippet decoration -->
+                            <div class="code-decoration">
+                                <div class="code-line">
+                                    <span class="code-func">love</span>() {
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="code-key">return</span> <span class="code-str">"forever"</span> + <span class="code-str">"together"</span>;
+                                </div>
+                                <div class="code-line">}</div>
                             </div>
-                            
-                            <div class="groom-info">
-                                <div class="name-label">CHÚ RỂ</div>
-                                <h3 class="name">TRUNG ĐỨC</h3>
-                                <p class="subtitle">Con trai ông bà <br>Lê Văn C & Phạm Thị D</p>
-                            </div>
-                        </div>
-                        
-                        <div class="code-special">
-                            <div class="code-line">love() {</div>
-                            <div class="code-line">  return "forever" + "together";</div>
-                            <div class="code-line">}</div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Right Page -->
-                <div class="page right-page">
+
+                <!-- Right Page (Inside right) -->
+                <div class="card-page right-page">
                     <div class="page-content">
-                        <div class="wedding-details">
-                            <h3 class="section-title">THÔNG TIN LỄ CƯỚI</h3>
+                        <!-- Wedding details -->
+                        <div class="details-section">
+                            <h3 class="details-title">THÔNG TIN LỄ CƯỚI</h3>
                             
+                            <!-- Date and time -->
                             <div class="detail-item">
                                 <div class="detail-icon">
-                                    <i class="fas fa-calendar-alt"></i>
+                                    <i class="far fa-calendar"></i>
                                 </div>
                                 <div class="detail-text">
                                     <div class="detail-label">NGÀY THÀNH HÔN</div>
@@ -120,9 +182,10 @@
                                 </div>
                             </div>
                             
+                            <!-- Time -->
                             <div class="detail-item">
                                 <div class="detail-icon">
-                                    <i class="fas fa-clock"></i>
+                                    <i class="far fa-clock"></i>
                                 </div>
                                 <div class="detail-text">
                                     <div class="detail-label">GIỜ ĐÓN KHÁCH</div>
@@ -130,6 +193,7 @@
                                 </div>
                             </div>
                             
+                            <!-- Ceremony -->
                             <div class="detail-item">
                                 <div class="detail-icon">
                                     <i class="fas fa-church"></i>
@@ -140,6 +204,7 @@
                                 </div>
                             </div>
                             
+                            <!-- Venue -->
                             <div class="detail-item">
                                 <div class="detail-icon">
                                     <i class="fas fa-map-marker-alt"></i>
@@ -150,6 +215,7 @@
                                 </div>
                             </div>
                             
+                            <!-- Reception -->
                             <div class="detail-item">
                                 <div class="detail-icon">
                                     <i class="fas fa-utensils"></i>
@@ -160,89 +226,99 @@
                                 </div>
                             </div>
                             
-                            <div class="map-placeholder" id="mapButton">
-                                <i class="fas fa-map"></i>
+                            <!-- Map button -->
+                            <div class="map-button" id="mapBtn">
+                                <i class="fas fa-map-marked-alt"></i>
                                 <span>Xem bản đồ chỉ đường</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- RSVP Form -->
-            <div class="rsvp-section" id="rsvpSection">
-                <h3 class="rsvp-title">XÁC NHẬN THAM DỰ</h3>
-                <p class="rsvp-subtitle">Vui lòng cho chúng tôi biết bạn có thể tham dự không</p>
+
+            <!-- RSVP Form Section -->
+            <div class="rsvp-container" id="rsvpContainer">
+                <div class="rsvp-header">
+                    <h3><i class="far fa-envelope"></i> XÁC NHẬN THAM DỰ</h3>
+                    <p>Vui lòng cho chúng tôi biết bạn có thể tham dự không</p>
+                </div>
                 
                 <form id="rsvpForm">
                     <input type="hidden" id="guestNameInput" name="guest_name" value="">
                     
-                    <div class="form-group">
-                        <label class="form-label">Bạn có thể tham dự không?</label>
+                    <!-- Attendance options -->
+                    <div class="form-section">
+                        <label class="section-label">Bạn có thể tham dự không?</label>
                         <div class="attendance-options">
-                            <label class="attendance-option">
+                            <label class="option-item">
                                 <input type="radio" name="attendance" value="yes" required>
-                                <div class="option-box yes-option">
-                                    <i class="fas fa-check-circle"></i>
+                                <div class="option-box yes">
+                                    <i class="fas fa-check"></i>
                                     <span>Có, tôi sẽ tham dự</span>
                                 </div>
                             </label>
-                            <label class="attendance-option">
+                            <label class="option-item">
                                 <input type="radio" name="attendance" value="no">
-                                <div class="option-box no-option">
-                                    <i class="fas fa-times-circle"></i>
-                                    <span>Không, tôi không thể tham dự</span>
+                                <div class="option-box no">
+                                    <i class="fas fa-times"></i>
+                                    <span>Không, tôi không thể</span>
                                 </div>
                             </label>
                         </div>
                     </div>
                     
-                    <div class="form-group" id="guestCountGroup">
-                        <label class="form-label">Số người tham dự</label>
-                        <div class="number-input">
-                            <button type="button" class="number-btn minus-btn">
+                    <!-- Guest count -->
+                    <div class="form-section" id="guestCountSection">
+                        <label class="section-label">Số người tham dự</label>
+                        <div class="number-selector">
+                            <button type="button" class="number-btn minus" id="minusBtn">
                                 <i class="fas fa-minus"></i>
                             </button>
                             <input type="number" id="guestCount" name="guest_count" value="1" min="1" max="10" readonly>
-                            <button type="button" class="number-btn plus-btn">
+                            <button type="button" class="number-btn plus" id="plusBtn">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label class="form-label">Lời chúc (nếu có)</label>
-                        <textarea id="guestMessage" name="message" placeholder="Gửi lời chúc đến cô dâu chú rể..."></textarea>
+                    <!-- Message -->
+                    <div class="form-section">
+                        <label class="section-label">Lời chúc (nếu có)</label>
+                        <textarea id="guestMessage" name="message" placeholder="Chúc mừng và những lời tốt đẹp..."></textarea>
                     </div>
                     
+                    <!-- Form actions -->
                     <div class="form-actions">
                         <button type="submit" class="submit-btn">
                             <i class="fas fa-paper-plane"></i>
                             Gửi phản hồi
                         </button>
-                        <button type="button" class="close-btn" id="closeFormBtn">
-                            <i class="fas fa-times"></i>
+                        <button type="button" class="cancel-btn" id="cancelRsvp">
                             Đóng
                         </button>
                     </div>
                 </form>
                 
+                <!-- Success message -->
                 <div class="success-message" id="successMessage">
-                    <i class="fas fa-check-circle"></i>
-                    <h4>Cảm ơn bạn đã phản hồi!</h4>
-                    <p>Chúng tôi đã nhận được thông tin của bạn. Hẹn gặp tại lễ cưới!</p>
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Cảm ơn bạn!</h4>
+                    <p>Chúng tôi đã nhận được phản hồi của bạn.</p>
+                    <p class="success-note">Hẹn gặp tại lễ cưới!</p>
                 </div>
             </div>
-            
-            <!-- Action Buttons -->
+
+            <!-- Action buttons -->
             <div class="action-buttons">
-                <button class="action-btn" id="openFormBtn">
-                    <i class="fas fa-reply"></i>
-                    <span>Phản hồi tham dự</span>
+                <button class="action-btn" id="rsvpBtn">
+                    <i class="far fa-check-circle"></i>
+                    <span>Phản hồi</span>
                 </button>
                 <button class="action-btn" id="viewMapBtn">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <span>Xem bản đồ</span>
+                    <i class="fas fa-map"></i>
+                    <span>Bản đồ</span>
                 </button>
                 <button class="action-btn" id="closeCardBtn">
                     <i class="fas fa-envelope"></i>
@@ -253,43 +329,42 @@
     </div>
 
     <!-- Map Modal -->
-    <div class="modal" id="mapModal">
+    <div class="modal-overlay" id="mapModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3><i class="fas fa-map-marked-alt"></i> Bản đồ chỉ đường</h3>
+                <h3><i class="fas fa-map-marked-alt"></i> Chỉ đường đến lễ cưới</h3>
                 <button class="modal-close" id="closeMapBtn">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="map-container">
-                    <!-- Google Maps Embed -->
+                <div class="map-wrapper">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.440719381052!2d106.69728817508102!3d10.778007689371311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f46fb1b9b9d%3A0xc2a3c60dbf17b6d5!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVFAuSENN!5e0!3m2!1svi!2s!4v1695678901234!5m2!1svi!2s" 
                         width="100%" 
-                        height="400" 
+                        height="350" 
                         style="border:0;" 
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-                    <div class="location-details">
-                        <h4>Nhà hàng Hoa Sen</h4>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ, TP.HCM</p>
+                    <div class="venue-details">
+                        <h4><i class="fas fa-church"></i> Nhà hàng Hoa Sen</h4>
+                        <p><i class="fas fa-location-dot"></i> 123 Đường ABC, Quận XYZ, TP.HCM</p>
                         <p><i class="fas fa-phone"></i> 0901 234 567</p>
-                        <p><i class="fas fa-car"></i> Có chỗ đỗ xe ô tô</p>
+                        <p><i class="fas fa-car"></i> Có bãi đỗ xe miễn phí</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Audio Player -->
-    <div class="audio-player">
+    <!-- Music Toggle -->
+    <div class="music-control">
         <button id="musicToggle">
             <i class="fas fa-music"></i>
-            <span>Nhạc nền</span>
+            <span class="music-text">Nhạc</span>
         </button>
         <audio id="backgroundMusic" loop>
-            <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-day-2284.mp3" type="audio/mpeg">
+            <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-vows-827.mp3" type="audio/mpeg">
         </audio>
     </div>
 
