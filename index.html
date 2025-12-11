@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Mời Cưới - Hà My & Trung Đức</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/wedding-rings.png">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="ghibli-background">
+        <div class="floating-heart"><i class="fas fa-heart"></i></div>
+        <div class="floating-heart"><i class="fas fa-heart"></i></div>
+        <div class="floating-heart"><i class="fas fa-heart"></i></div>
+        <div class="floating-flower">🌸</div>
+        <div class="floating-flower">🌸</div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+    </div>
+
+    <!-- Main Invitation Container -->
+    <div class="container">
+        <!-- Invitation Card (Closed View) -->
+        <div class="invitation-closed" id="closedCard">
+            <div class="ribbon-tim">RIBBON TIM</div>
+            
+            <div class="invitation-front">
+                <div class="wedding-couple">
+                    <div class="bride">HÀ MY</div>
+                    <div class="heart-connector">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="groom">TRUNG ĐỨC</div>
+                </div>
+                
+                <h1 class="heading">Wedding Invitation</h1>
+                
+                <div class="quote">
+                    <i class="fas fa-quote-left"></i>
+                    <span class="code-quote">cout << "nothing to fear, love is here, together we cheer";</span>
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                
+                <div class="flower-decoration">
+                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-leaf"></i>
+                </div>
+                
+                <p class="instruction">Ấn vào thiệp để mở</p>
+                <div class="open-icon">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invitation Card (Opened View) -->
+        <div class="invitation-opened" id="openedCard">
+            <div class="invitation-content">
+                <!-- Left Page -->
+                <div class="page left-page">
+                    <div class="page-content">
+                        <div class="ribbon-tim">RIBBON TIM</div>
+                        
+                        <div class="invitation-header">
+                            <h2 class="invitation-title">TRÂN TRỌNG KÍNH MỜI</h2>
+                            <div class="guest-name-container">
+                                <p class="kính-mời">Kính mời:</p>
+                                <h3 class="guest-name" id="displayGuestName">Quý khách</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="couple-info">
+                            <div class="bride-info">
+                                <div class="name-label">CÔ DÂU</div>
+                                <h3 class="name">HÀ MY</h3>
+                                <p class="subtitle">Con gái ông bà <br>Nguyễn Văn A & Trần Thị B</p>
+                            </div>
+                            
+                            <div class="heart-connector-large">
+                                <i class="fas fa-heart"></i>
+                                <div class="and">&</div>
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            
+                            <div class="groom-info">
+                                <div class="name-label">CHÚ RỂ</div>
+                                <h3 class="name">TRUNG ĐỨC</h3>
+                                <p class="subtitle">Con trai ông bà <br>Lê Văn C & Phạm Thị D</p>
+                            </div>
+                        </div>
+                        
+                        <div class="code-special">
+                            <div class="code-line">love() {</div>
+                            <div class="code-line">  return "forever" + "together";</div>
+                            <div class="code-line">}</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Page -->
+                <div class="page right-page">
+                    <div class="page-content">
+                        <div class="wedding-details">
+                            <h3 class="section-title">THÔNG TIN LỄ CƯỚI</h3>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">NGÀY THÀNH HÔN</div>
+                                    <div class="detail-value">Chủ Nhật, 15/12/2024</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">GIỜ ĐÓN KHÁCH</div>
+                                    <div class="detail-value">10:30 SÁNG</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-church"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">LỄ THÀNH HÔN</div>
+                                    <div class="detail-value">11:00 SÁNG</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">ĐỊA ĐIỂM</div>
+                                    <div class="detail-value">Nhà hàng Hoa Sen<br>123 Đường ABC, Quận XYZ, TP.HCM</div>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div class="detail-text">
+                                    <div class="detail-label">TIỆC CƯỚI</div>
+                                    <div class="detail-value">12:00 TRƯA</div>
+                                </div>
+                            </div>
+                            
+                            <div class="map-placeholder" id="mapButton">
+                                <i class="fas fa-map"></i>
+                                <span>Xem bản đồ chỉ đường</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RSVP Form -->
+            <div class="rsvp-section" id="rsvpSection">
+                <h3 class="rsvp-title">XÁC NHẬN THAM DỰ</h3>
+                <p class="rsvp-subtitle">Vui lòng cho chúng tôi biết bạn có thể tham dự không</p>
+                
+                <form id="rsvpForm">
+                    <input type="hidden" id="guestNameInput" name="guest_name" value="">
+                    
+                    <div class="form-group">
+                        <label class="form-label">Bạn có thể tham dự không?</label>
+                        <div class="attendance-options">
+                            <label class="attendance-option">
+                                <input type="radio" name="attendance" value="yes" required>
+                                <div class="option-box yes-option">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Có, tôi sẽ tham dự</span>
+                                </div>
+                            </label>
+                            <label class="attendance-option">
+                                <input type="radio" name="attendance" value="no">
+                                <div class="option-box no-option">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>Không, tôi không thể tham dự</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" id="guestCountGroup">
+                        <label class="form-label">Số người tham dự</label>
+                        <div class="number-input">
+                            <button type="button" class="number-btn minus-btn">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" id="guestCount" name="guest_count" value="1" min="1" max="10" readonly>
+                            <button type="button" class="number-btn plus-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Lời chúc (nếu có)</label>
+                        <textarea id="guestMessage" name="message" placeholder="Gửi lời chúc đến cô dâu chú rể..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Gửi phản hồi
+                        </button>
+                        <button type="button" class="close-btn" id="closeFormBtn">
+                            <i class="fas fa-times"></i>
+                            Đóng
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Cảm ơn bạn đã phản hồi!</h4>
+                    <p>Chúng tôi đã nhận được thông tin của bạn. Hẹn gặp tại lễ cưới!</p>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn" id="openFormBtn">
+                    <i class="fas fa-reply"></i>
+                    <span>Phản hồi tham dự</span>
+                </button>
+                <button class="action-btn" id="viewMapBtn">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Xem bản đồ</span>
+                </button>
+                <button class="action-btn" id="closeCardBtn">
+                    <i class="fas fa-envelope"></i>
+                    <span>Đóng thiệp</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Modal -->
+    <div class="modal" id="mapModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-map-marked-alt"></i> Bản đồ chỉ đường</h3>
+                <button class="modal-close" id="closeMapBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="map-container">
+                    <!-- Google Maps Embed -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.440719381052!2d106.69728817508102!3d10.778007689371311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f46fb1b9b9d%3A0xc2a3c60dbf17b6d5!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVFAuSENN!5e0!3m2!1svi!2s!4v1695678901234!5m2!1svi!2s" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="location-details">
+                        <h4>Nhà hàng Hoa Sen</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ, TP.HCM</p>
+                        <p><i class="fas fa-phone"></i> 0901 234 567</p>
+                        <p><i class="fas fa-car"></i> Có chỗ đỗ xe ô tô</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Player -->
+    <div class="audio-player">
+        <button id="musicToggle">
+            <i class="fas fa-music"></i>
+            <span>Nhạc nền</span>
+        </button>
+        <audio id="backgroundMusic" loop>
+            <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-day-2284.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
