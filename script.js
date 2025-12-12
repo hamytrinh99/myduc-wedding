@@ -1,5 +1,5 @@
 // ========== config ==========
-const SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_WEBAPP_URL_HERE"; // <-- THAY ở đây
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyOUDyB_uoIuc9UyADgdKhwABJ4d2tPZiJ5ZDq-sPPahTosXnr2IbzXsGHteWvSu_qr/execE"; 
 
 // ========== helper: read ?name= ==========
 function getQueryParam(key){
