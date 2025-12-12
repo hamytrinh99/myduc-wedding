@@ -1,373 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding invitationc</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@300;400;600&family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thiệp cưới — Phạm Trung Đức & Trịnh Thị Hà My</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Background with subtle animation -->
-    <div class="background-animation">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
+  <div id="page">
 
-    <!-- Closed Card View -->
-    <div class="card-wrapper">
-        <div class="invitation-card closed-card" id="closedCard">
-            <div class="card-inner">
-                <!-- Card Front (Mặt trước thiệp) -->
-                <div class="card-front">
-                    <!-- Decorative border corners -->
-                    <div class="decor-corner tl">
-                        <div class="decor-line"></div>
-                        <div class="decor-dot"></div>
-                    </div>
-                    <div class="decor-corner tr">
-                        <div class="decor-line"></div>
-                        <div class="decor-dot"></div>
-                    </div>
-                    <div class="decor-corner bl">
-                        <div class="decor-line"></div>
-                        <div class="decor-dot"></div>
-                    </div>
-                    <div class="decor-corner br">
-                        <div class="decor-line"></div>
-                        <div class="decor-dot"></div>
-                    </div>
-
-                    <!-- Main content -->
-                    <div class="card-content">
-                        <!-- RIBBON TIM header -->
-                        <div class="ribbon-header">
-                            <div class="ribbon-text">
-                                <span class="ribbon-char">R</span>
-                                <span class="ribbon-char">I</span>
-                                <span class="ribbon-char">B</span>
-                                <span class="ribbon-char">B</span>
-                                <span class="ribbon-char">O</span>
-                                <span class="ribbon-char">N</span>
-                                <span class="ribbon-space">&nbsp;</span>
-                                <span class="ribbon-char">T</span>
-                                <span class="ribbon-char">I</span>
-                                <span class="ribbon-char">M</span>
-                            </div>
-                            <div class="ribbon-line"></div>
-                        </div>
-
-                        <!-- Wedding invitation heading -->
-                        <div class="wedding-heading">
-                            <h1 class="heading-main">Wedding<br>invitation</h1>
-                            <div class="heading-underline"></div>
-                        </div>
-
-                        <!-- Center quote with code style -->
-                        <div class="center-quote">
-                            <div class="code-container">
-                                <span class="code-keyword">cout</span>
-                                <span class="code-operator">&lt;&lt;</span>
-                                <span class="code-string">"nothing to fear, love is here, together we cheer"</span>
-                                <span class="code-semicolon">;</span>
-                            </div>
-                        </div>
-
-                        <!-- Bottom decoration -->
-                        <div class="bottom-decoration">
-                            <div class="flower-icon">❀</div>
-                            <div class="flower-icon">❀</div>
-                            <div class="flower-icon">❀</div>
-                        </div>
-
-                        <!-- Open instruction -->
-                        <div class="open-hint">
-                            <p>Nhấn để mở thiệp</p>
-                            <div class="arrow-down">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Cover (mimic folding card) -->
+    <header id="cover">
+      <img id="ribbon" src="assets/ribbon.png" alt="ribbon">
+      <div class="cover-inner">
+        <img id="cover-front" src="assets/front.png" alt="Front">
+        <div class="cover-text">
+          <div class="title">Wedding invitation</div>
+          <div class="guest-line">Kính mời: <span class="guestName">Quý khách</span></div>
         </div>
+        <button id="openBtn" class="btn">Open Invitation</button>
+      </div>
+    </header>
 
-        <!-- Opened Card View -->
-        <div class="invitation-card opened-card" id="openedCard">
-            <div class="card-inner opened">
-                <!-- Left Page (Inside left) -->
-                <div class="card-page left-page">
-                    <div class="page-content">
-                        <!-- RIBBON TIM header -->
-                        <div class="ribbon-header inside">
-                            <div class="ribbon-text">
-                                <span class="ribbon-char">R</span>
-                                <span class="ribbon-char">I</span>
-                                <span class="ribbon-char">B</span>
-                                <span class="ribbon-char">B</span>
-                                <span class="ribbon-char">O</span>
-                                <span class="ribbon-char">N</span>
-                                <span class="ribbon-space">&nbsp;</span>
-                                <span class="ribbon-char">T</span>
-                                <span class="ribbon-char">I</span>
-                                <span class="ribbon-char">M</span>
-                            </div>
-                            <div class="ribbon-line"></div>
-                        </div>
+    <!-- Main content (hidden until open) -->
+    <main id="invitation" class="hidden">
+      <section class="panel panel-save">
+        <img src="assets/inner1.png" alt="Save the date" class="panel-art">
+      </section>
 
-                        <!-- Formal invitation text -->
-                        <div class="formal-invitation">
-                            <h2 class="invite-title">TRÂN TRỌNG KÍNH MỜI</h2>
-                            
-                            <!-- Personalized guest name -->
-                            <div class="guest-section">
-                                <p class="guest-label">Kính mời:</p>
-                                <h3 class="guest-name" id="displayGuestName">Quý khách</h3>
-                            </div>
-
-                            <!-- Couple information -->
-                            <div class="couple-section">
-                                <div class="bride-side">
-                                    <div class="role-label">CÔ DÂU</div>
-                                    <h4 class="name-large">HÀ MY</h4>
-                                    <p class="parents">Con gái ông bà<br>Nguyễn Văn A & Trần Thị B</p>
-                                </div>
-                                
-                                <div class="heart-connection">
-                                    <div class="heart-icon">♥</div>
-                                    <div class="and-text">&</div>
-                                    <div class="heart-icon">♥</div>
-                                </div>
-                                
-                                <div class="groom-side">
-                                    <div class="role-label">CHÚ RỂ</div>
-                                    <h4 class="name-large">TRUNG ĐỨC</h4>
-                                    <p class="parents">Con trai ông bà<br>Lê Văn C & Phạm Thị D</p>
-                                </div>
-                            </div>
-
-                            <!-- Code snippet decoration -->
-                            <div class="code-decoration">
-                                <div class="code-line">
-                                    <span class="code-func">love</span>() {
-                                </div>
-                                <div class="code-line indent">
-                                    <span class="code-key">return</span> <span class="code-str">"forever"</span> + <span class="code-str">"together"</span>;
-                                </div>
-                                <div class="code-line">}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Page (Inside right) -->
-                <div class="card-page right-page">
-                    <div class="page-content">
-                        <!-- Wedding details -->
-                        <div class="details-section">
-                            <h3 class="details-title">THÔNG TIN LỄ CƯỚI</h3>
-                            
-                            <!-- Date and time -->
-                            <div class="detail-item">
-                                <div class="detail-icon">
-                                    <i class="far fa-calendar"></i>
-                                </div>
-                                <div class="detail-text">
-                                    <div class="detail-label">NGÀY THÀNH HÔN</div>
-                                    <div class="detail-value">Chủ Nhật, 15/12/2024</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Time -->
-                            <div class="detail-item">
-                                <div class="detail-icon">
-                                    <i class="far fa-clock"></i>
-                                </div>
-                                <div class="detail-text">
-                                    <div class="detail-label">GIỜ ĐÓN KHÁCH</div>
-                                    <div class="detail-value">10:30 SÁNG</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Ceremony -->
-                            <div class="detail-item">
-                                <div class="detail-icon">
-                                    <i class="fas fa-church"></i>
-                                </div>
-                                <div class="detail-text">
-                                    <div class="detail-label">LỄ THÀNH HÔN</div>
-                                    <div class="detail-value">11:00 SÁNG</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Venue -->
-                            <div class="detail-item">
-                                <div class="detail-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="detail-text">
-                                    <div class="detail-label">ĐỊA ĐIỂM</div>
-                                    <div class="detail-value">Nhà hàng Hoa Sen<br>123 Đường ABC, Quận XYZ, TP.HCM</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Reception -->
-                            <div class="detail-item">
-                                <div class="detail-icon">
-                                    <i class="fas fa-utensils"></i>
-                                </div>
-                                <div class="detail-text">
-                                    <div class="detail-label">TIỆC CƯỚI</div>
-                                    <div class="detail-value">12:00 TRƯA</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Map button -->
-                            <div class="map-button" id="mapBtn">
-                                <i class="fas fa-map-marked-alt"></i>
-                                <span>Xem bản đồ chỉ đường</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RSVP Form Section -->
-            <div class="rsvp-container" id="rsvpContainer">
-                <div class="rsvp-header">
-                    <h3><i class="far fa-envelope"></i> XÁC NHẬN THAM DỰ</h3>
-                    <p>Vui lòng cho chúng tôi biết bạn có thể tham dự không</p>
-                </div>
-                
-                <form id="rsvpForm">
-                    <input type="hidden" id="guestNameInput" name="guest_name" value="">
-                    
-                    <!-- Attendance options -->
-                    <div class="form-section">
-                        <label class="section-label">Bạn có thể tham dự không?</label>
-                        <div class="attendance-options">
-                            <label class="option-item">
-                                <input type="radio" name="attendance" value="yes" required>
-                                <div class="option-box yes">
-                                    <i class="fas fa-check"></i>
-                                    <span>Có, tôi sẽ tham dự</span>
-                                </div>
-                            </label>
-                            <label class="option-item">
-                                <input type="radio" name="attendance" value="no">
-                                <div class="option-box no">
-                                    <i class="fas fa-times"></i>
-                                    <span>Không, tôi không thể</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <!-- Guest count -->
-                    <div class="form-section" id="guestCountSection">
-                        <label class="section-label">Số người tham dự</label>
-                        <div class="number-selector">
-                            <button type="button" class="number-btn minus" id="minusBtn">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <input type="number" id="guestCount" name="guest_count" value="1" min="1" max="10" readonly>
-                            <button type="button" class="number-btn plus" id="plusBtn">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Message -->
-                    <div class="form-section">
-                        <label class="section-label">Lời chúc (nếu có)</label>
-                        <textarea id="guestMessage" name="message" placeholder="Chúc mừng và những lời tốt đẹp..."></textarea>
-                    </div>
-                    
-                    <!-- Form actions -->
-                    <div class="form-actions">
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Gửi phản hồi
-                        </button>
-                        <button type="button" class="cancel-btn" id="cancelRsvp">
-                            Đóng
-                        </button>
-                    </div>
-                </form>
-                
-                <!-- Success message -->
-                <div class="success-message" id="successMessage">
-                    <div class="success-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <h4>Cảm ơn bạn!</h4>
-                    <p>Chúng tôi đã nhận được phản hồi của bạn.</p>
-                    <p class="success-note">Hẹn gặp tại lễ cưới!</p>
-                </div>
-            </div>
-
-            <!-- Action buttons -->
-            <div class="action-buttons">
-                <button class="action-btn" id="rsvpBtn">
-                    <i class="far fa-check-circle"></i>
-                    <span>Phản hồi</span>
-                </button>
-                <button class="action-btn" id="viewMapBtn">
-                    <i class="fas fa-map"></i>
-                    <span>Bản đồ</span>
-                </button>
-                <button class="action-btn" id="closeCardBtn">
-                    <i class="fas fa-envelope"></i>
-                    <span>Đóng thiệp</span>
-                </button>
-            </div>
+      <section class="panel panel-details">
+        <div class="left">
+          <img src="assets/map.png" alt="Map" class="map">
+          <div class="timeline">
+            <h3>Timeline</h3>
+            <ul>
+              <li><strong>11:00</strong> Đón khách / Spirited Arrival</li>
+              <li><strong>11:45</strong> Lễ / Howl's Promise</li>
+              <li><strong>12:00</strong> Khai tiệc / Whisper Feast</li>
+              <li><strong>13:30</strong> Kết thúc / Totoro Farewell</li>
+            </ul>
+          </div>
         </div>
-    </div>
-
-    <!-- Map Modal -->
-    <div class="modal-overlay" id="mapModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3><i class="fas fa-map-marked-alt"></i> Chỉ đường đến lễ cưới</h3>
-                <button class="modal-close" id="closeMapBtn">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="map-wrapper">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.440719381052!2d106.69728817508102!3d10.778007689371311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f46fb1b9b9d%3A0xc2a3c60dbf17b6d5!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVFAuSENN!5e0!3m2!1svi!2s!4v1695678901234!5m2!1svi!2s" 
-                        width="100%" 
-                        height="350" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                    <div class="venue-details">
-                        <h4><i class="fas fa-church"></i> Nhà hàng Hoa Sen</h4>
-                        <p><i class="fas fa-location-dot"></i> 123 Đường ABC, Quận XYZ, TP.HCM</p>
-                        <p><i class="fas fa-phone"></i> 0901 234 567</p>
-                        <p><i class="fas fa-car"></i> Có bãi đỗ xe miễn phí</p>
-                    </div>
-                </div>
-            </div>
+        <div class="right">
+          <h1>PHẠM TRUNG ĐỨC & TRỊNH THỊ HÀ MY</h1>
+          <p class="date">28<sup>th</sup> January 2026</p>
+          <p class="venue">Khách sạn Melia Hà Nội — Grand Ballroom</p>
+          <div class="invite-text">
+            Kính mời <span class="guestName">Quý khách</span> tham dự lễ thành hôn cùng gia đình chúng tôi.
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- Music Toggle -->
-    <div class="music-control">
-        <button id="musicToggle">
-            <i class="fas fa-music"></i>
-            <span class="music-text">Nhạc</span>
-        </button>
-        <audio id="backgroundMusic" loop>
-            <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-vows-827.mp3" type="audio/mpeg">
-        </audio>
-    </div>
+      <!-- RSVP -->
+      <section class="panel panel-rsvp">
+        <h2>RSVP</h2>
+        <form id="rsvp-form">
+          <input type="hidden" name="guest" id="guestField" value="">
+          <label>Quý vị có tham dự?
+            <select name="attending" id="attending">
+              <option value="yes">Có</option>
+              <option value="no">Không</option>
+            </select>
+          </label>
+          <label>Số lượng (bao gồm quý vị)
+            <input type="number" name="quantity" id="quantity" min="0" value="1">
+          </label>
+          <button type="submit" class="btn">Gửi phản hồi</button>
+        </form>
+        <div id="rsvp-msg" class="note"></div>
+      </section>
 
-    <script src="script.js"></script>
+      <footer class="panel panel-footer">
+        <p>Rất hân hạnh được đón tiếp!</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
