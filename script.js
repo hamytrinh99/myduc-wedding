@@ -1,137 +1,88 @@
-:root{
-  --olive: #9baa8a;
-  --dark: #4c4c4c;
-  --muted:#f6f6f6;
-  --accent:#d6cfe0;
-  --max-width:1000px;
+// ========== config ==========
+const SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_WEBAPP_URL_HERE"; // <-- THAY ở đây
+
+// ========== helper: read ?name= ==========
+function getQueryParam(key){
+  const params = new URLSearchParams(window.location.search);
+  const v = params.get(key);
+  return v ? decodeURIComponent(v) : null;
 }
 
-*{box-sizing:border-box}
-body{
-  font-family: "Montserrat", system-ui, sans-serif;
-  background:#5b5b5b;
-  color:var(--dark);
-  margin:0;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+// ========== set guest name in all elements ==========
+function setGuestName(name){
+  const nodes = document.querySelectorAll(".guestName");
+  nodes.forEach(n => n.innerText = name || "Quý khách");
+  // also set hidden field
+  const gf = document.getElementById("guestField");
+  if(gf) gf.value = name || "";
 }
 
-#page{
-  max-width:var(--max-width);
-  margin:40px auto;
-  background:transparent;
-}
+// ========== Open invitation animation ==========
+document.getElementById("openBtn").addEventListener("click", function(){
+  // simple: hide cover, show main with a smooth fade & small flower animation
+  const cover = document.getElementById("cover");
+  const inv = document.getElementById("invitation");
 
-/* COVER */
-#cover{
-  position:relative;
-  height:640px;
-  background:var(--olive);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:6px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.35);
-  overflow:hidden;
-}
+  // gentle scale/rotate of cover front before opening
+  const front = document.getElementById("cover-front");
+  front.style.transform = "scale(0.98) rotate(-1deg)";
+  setTimeout(()=>{
+    front.style.transform = "scale(1) rotate(8deg)";
+    cover.style.transition = "opacity .7s ease";
+    cover.style.opacity = "0";
+    setTimeout(()=>{ cover.style.display="none"; inv.classList.remove("hidden"); window.scrollTo({top:0, behavior:'smooth'})}, 700);
+  }, 250);
+});
 
-#ribbon{
-  position:absolute;
-  top:20px;
-  left:40px;
-  width:160px;
-  transform-origin:center;
-  animation: ribbonFloat 4s ease-in-out infinite;
-  opacity:0.95;
-}
+// ========== Populate guest name from URL early ==========
+const n = getQueryParam("name");
+setGuestName(n);
 
-@keyframes ribbonFloat{
-  0%{ transform:translateY(0) rotate(-5deg) }
-  50%{ transform:translateY(6px) rotate(4deg) }
-  100%{ transform:translateY(0) rotate(-5deg) }
-}
+// ========== RSVP submit handler ==========
+const form = document.getElementById("rsvp-form");
+form.addEventListener("submit", async function(e){
+  e.preventDefault();
+  const guest = document.getElementById("guestField").value || getQueryParam("name") || "Unknown";
+  const attending = document.getElementById("attending").value;
+  const quantity = document.getElementById("quantity").value || 0;
 
-.cover-inner{
-  text-align:center;
-  width:75%;
-}
+  // Basic validation
+  if(attending === "" || quantity === ""){
+    document.getElementById("rsvp-msg").innerText = "Vui lòng điền đầy đủ";
+    return;
+  }
 
-.cover-inner .title{
-  font-family:"Playfair Display";
-  font-weight:400;
-  font-size:26px;
-  color:rgba(20,30,20,0.9);
-  margin-bottom:6px;
-  letter-spacing:0.6px;
-}
+  // send to Google Apps Script
+  try{
+    const res = await fetch(SCRIPT_URL, {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({ name: guest, attending, quantity })
+    });
+    const text = await res.text();
+    document.getElementById("rsvp-msg").innerText = "Cảm ơn bạn đã phản hồi! (Đã lưu)";
+    form.reset();
+  }catch(err){
+    console.error(err);
+    document.getElementById("rsvp-msg").innerText = "Lỗi gửi phản hồi. Vui lòng thử lại.";
+  }
+});
 
-.guest-line{
-  margin-bottom:20px;
-  font-size:18px;
-  color:rgba(10,20,10,0.8);
-}
-
-#cover-front{
-  width:360px;
-  border-radius:4px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
-  margin-bottom:18px;
-  transform-origin:center;
-  transition: transform .9s cubic-bezier(.2,.9,.3,1);
-}
-
-/* Open button */
-.btn{
-  border:1px solid rgba(0,0,0,0.06);
-  background:#fff;
-  padding:10px 18px;
-  border-radius:6px;
-  cursor:pointer;
-  font-weight:600;
-  box-shadow:0 4px 12px rgba(0,0,0,0.12);
-}
-
-/* INVITATION */
-.hidden{display:none}
-.panel{
-  background: #fff;
-  padding:28px;
-  margin-top:24px;
-  border-radius:6px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.16);
-}
-
-/* split details */
-.panel-details{
-  display:flex;
-  gap:20px;
-  align-items:flex-start;
-}
-
-.panel-details .left{flex:1}
-.panel-details .right{flex:1.4}
-
-.panel-details h1{
-  font-family:"Playfair Display";
-  font-size:34px;
-  letter-spacing:1px;
-  margin:0 0 6px 0;
-}
-
-.panel-details .date{color:#8b8b8b; margin-top:0}
-.panel-details .venue{margin:8px 0 18px 0}
-
-/* RSVP */
-.panel-rsvp form{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
-.panel-rsvp label{display:block; min-width:160px}
-.panel-rsvp input[type="number"], .panel-rsvp select{
-  padding:8px 10px; border:1px solid #ddd; border-radius:6px;
-}
-.note{margin-top:12px; color:#2b7a41}
-
-/* small screens */
-@media (max-width:800px){
-  .panel-details{flex-direction:column}
-  #cover{height:520px}
-  #cover-front{width:280px}
-}
+// ========== small floating animations (flowers/clouds) ==========
+(function floaters(){
+  // create a few floating circles for atmosphere (or use images)
+  const cover = document.getElementById("cover");
+  for(let i=0;i<6;i++){
+    const el = document.createElement("div");
+    el.style.position="absolute";
+    el.style.width = (30 + Math.random()*40) + "px";
+    el.style.height = el.style.width;
+    el.style.borderRadius = "50%";
+    el.style.left = (10 + Math.random()*80) + "%";
+    el.style.top = (5 + Math.random()*60) + "%";
+    el.style.background = "rgba(214,207,224,0.25)";
+    el.style.pointerEvents = "none";
+    el.style.animation = `floatUp ${8 + Math.random()*8}s ease-in-out ${Math.random()*3}s infinite`;
+    cover.appendChild(el);
+  }
+})();
